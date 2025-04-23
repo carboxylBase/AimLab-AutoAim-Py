@@ -1,7 +1,9 @@
 
 # AimLab-AutoAim-Py
 
-<img src="https://github.com/carboxylBase/AimLab-opencv/blob/main/docs/assets/AimLab-AutoAim-icon.png" alt="icon" style="width:50%;">
+<div style="text-align:center;">
+  <img src="https://github.com/carboxylBase/AimLab-opencv/blob/main/docs/assets/AimLab-AutoAim-icon.png" alt="icon" style="width:50%;">
+</div>
 
 📘 [中文版](/docs/README.zh-CN.md)
 
