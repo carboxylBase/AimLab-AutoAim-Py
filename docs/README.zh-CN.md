@@ -1,6 +1,8 @@
 
 # AimLab-AutoAim-Py
 
+![icon](https://github.com/carboxylBase/AimLab-opencv/blob/main/docs/assets/AimLab-AutoAim-icon.png)
+
 📘 [English version](../README.md)
 
 基于 OpenCV 和 Python 的 AimLab 自动瞄准工具.
