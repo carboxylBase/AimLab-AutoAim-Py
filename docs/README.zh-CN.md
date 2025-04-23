@@ -38,4 +38,4 @@ pip install -r requirements.txt
     python main.py
     ```
 2. 打开 AimLab,选择一张想玩的地图.
-3. 选中 Scream 或者 Mask 窗口,点击 s 键,3 秒钟之后开始自动瞄准.
+3. 选中 Screem 或者 Mask 窗口,点击 s 键,3 秒钟之后开始自动瞄准.

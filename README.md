@@ -42,4 +42,4 @@ pip install -r requirements.txt
 
 2. Launch AimLab and select a map you want to play.
 
-3. Focus the Scream or Mask window, then press the `s` key. Auto-aiming will start after 3 seconds.
+3. Focus the Screem or Mask window, then press the `s` key. Auto-aiming will start after 3 seconds.
