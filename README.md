@@ -1,7 +1,7 @@
 
 # AimLab-AutoAim-Py
 
-📘 [中文版](/docs/README.md)
+📘 [中文版](/docs/README.zh-CN.md)
 
 An AimLab auto-aim tool based on OpenCV and Python.
 
