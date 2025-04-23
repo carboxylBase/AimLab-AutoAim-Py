@@ -5,7 +5,10 @@
 An AimLab aiming assistant tool based on OpenCV.
 
 ## Table of Contents  
-[TOC]
+- [Features](#features)
+- [Requirements](#requirements)
+- [Install Dependencies](#install-dependencies)
+- [Usage](#usage)
 
 ## Features
 

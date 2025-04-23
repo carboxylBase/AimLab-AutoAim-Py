@@ -83,8 +83,6 @@ with mss.mss() as sct:
             start_time = time.time()
         elif key == ord('e'):
             auto_aim = False
-        elif key == 27:
-            break
 
         if auto_aim:
             if (time.time() - start_time) * 1000 >= AUTO_AIM_DURATION:
