@@ -1,11 +1,10 @@
 import cv2
-import static_aiming
+import aiming_static
+import aiming_dynamic
 import keyboard
 import time
 import config
 
-static_mode = 1
-dynamic_mode = 2
 
 mode = int(input("Choose mode:\n " \
 "1. static\n " \
@@ -25,8 +24,8 @@ while True:
         if (time.time() - start_time) * 1000 >= config.AUTO_AIM_DURATION:
             auto_aim = False
 
-        if mode == static_mode:
-            static_aiming.run()
+        if mode == config.STATIC_MODE:
+            aiming_static.run()
 
-        elif mode == dynamic_mode:
-            mode = 0
+        elif mode == config.DYNAMEIC_MODE:
+            aiming_dynamic.run()

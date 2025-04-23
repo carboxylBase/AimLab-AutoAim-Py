@@ -1,28 +1,35 @@
-# AimLab-OpenCV
 
-📘 [中文版](/docs/README.zh.md)
+# AimLab-AutoAim-Py
 
-An AimLab aiming assistant tool based on OpenCV.
+📘 [中文版](/docs/README.md)
 
-## Table of Contents  
+An AimLab auto-aim tool based on OpenCV and Python.
+
+This project is inspired by [Holo-Spice/Aimlab](https://github.com/Holo-Spice/Aimlab). Thanks to the original author for the ideas and contributions.
+
+## Table of Contents
 - [Features](#features)
 - [Requirements](#requirements)
 - [Install Dependencies](#install-dependencies)
-- [Usage](#usage)
+- [Usage Guide](#usage-guide)
 
 ## Features
 
-This project uses image recognition and automated control to assist aiming in AimLab:
+This project uses image recognition and automation to assist users in aiming within AimLab:
 
-- Automatically detects targets  
-- Automatically moves the mouse to aim  
-- Supports manual start and timed stop  
+- Automatically recognizes targets  
+- Automatically moves the mouse to aim and shoot  
+- Supports manual start and scheduled stop  
 
-⚠️ **Disclaimer**: This project is for educational and research purposes only. Use is only permitted in offline mode. Do not use for any form of cheating. Use at your own risk.
+The current version only supports recognizing blue spheres and excels at static target aiming with high efficiency and precision. It achieved a score of 350,000 in the "Six Balls" mode.  
+
+Due to performance limitations in Python, aiming at dynamic targets is not ideal, and further development on this feature has been paused.
+
+⚠️ **Disclaimer**: This project is for educational and research purposes only, and is only allowed for offline use. Please do not use it for any form of cheating. Use at your own risk.
 
 ## Requirements
 
-- OS: Windows  
+- Operating System: Windows  
 - Game Platform: AimLab  
 - Python: >= 3.8  
 
@@ -32,14 +39,15 @@ This project uses image recognition and automated control to assist aiming in Ai
 pip install -r requirements.txt
 ```
 
-## Usage
+## Usage Guide
 
-1. Open a terminal in the project root directory and run:
+1. Open a terminal in the project root directory and run the following command:
+    ```bash
+    python main.py
+    ```
 
-   ```bash
-   python main.py
-   ```
+2. In the terminal, select a mode: input `1` (Static Aim) or `2` (Dynamic Aim).
 
-2. Launch AimLab and select a map you want to play.
+3. Open AimLab and select any map.
 
-3. Focus the Screem or Mask window, then press the `s` key. Auto-aiming will start after 3 seconds.
+4. Press the `s` key to start auto-aim, and press the `e` key to stop auto-aim.

@@ -20,4 +20,3 @@ def run():
                 mouse_control.mouse_click()
             else:
                 mouse_control.move_mouse_smooth(dx, dy)
-    return
