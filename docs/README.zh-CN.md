@@ -1,7 +1,7 @@
 
 # AimLab-AutoAim-Py
 
-<div style="text-align:center;">
+<div align="center">
   <img src="https://github.com/carboxylBase/AimLab-opencv/blob/main/docs/assets/AimLab-AutoAim-icon.png" alt="icon" style="width:50%;">
 </div>
 
