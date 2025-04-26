@@ -16,6 +16,8 @@ class MOUSEINPUT(ctypes.Structure):
 class INPUT(ctypes.Structure):
     _fields_ = [("type", ctypes.c_ulong),
                 ("mi", MOUSEINPUT)]
+    
+driver = ctypes.CDLL(r'lib/MouseControl.dll')
 
 def send_input(dx, dy, flags):
     extra = ctypes.c_ulong(0)
@@ -24,15 +26,18 @@ def send_input(dx, dy, flags):
     ctypes.windll.user32.SendInput(1, ctypes.pointer(input_struct), ctypes.sizeof(input_struct))
 
 def move_mouse_relative(dx, dy):
-    send_input(int(dx), int(dy), MOUSEEVENTF_MOVE)
+    driver.move_R(int(dx), int(dy))
+    # send_input(int(dx), int(dy), MOUSEEVENTF_MOVE)
 
 def move_mouse_smooth(dx, dy, steps=1, delay=0):
     for _ in range(steps):
         move_mouse_relative(dx / steps, dy / steps)
 
 def mouse_click():
-    send_input(0, 0, MOUSEEVENTF_LEFTDOWN)
-    send_input(0, 0, MOUSEEVENTF_LEFTUP)
+    driver.click_Left_down()
+    driver.click_Left_up()
+    # send_input(0, 0, MOUSEEVENTF_LEFTDOWN)
+    # send_input(0, 0, MOUSEEVENTF_LEFTUP)
 
 def get_mouse_pos():
     pt = wintypes.POINT()

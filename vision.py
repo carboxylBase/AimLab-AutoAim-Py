@@ -1,5 +1,6 @@
 import cv2
 import math
+import config
 
 def preprocess(frame):
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
@@ -13,7 +14,7 @@ def find_targets(mask, mouse_pos):
     for cnt in contours:
         if len(cnt) < 4: continue
         rect = cv2.boundingRect(cnt)
-        if rect[2] * rect[3] < 50: continue
+        if rect[2] * rect[3] < config.MIN_AREA: continue
         cx, cy = rect[0] + rect[2] // 2, rect[1] + rect[3] // 2
         results.append((cx, cy))
         if cv2.pointPolygonTest(cnt, mouse_pos, False) > 0: res = 1

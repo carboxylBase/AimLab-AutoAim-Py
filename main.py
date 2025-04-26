@@ -4,7 +4,8 @@ import aiming_dynamic
 import keyboard
 import time
 import config
-
+import win32gui
+import sys
 
 mode = int(input("Choose mode:\n " \
 "1. static\n " \
@@ -12,6 +13,13 @@ mode = int(input("Choose mode:\n " \
 
 auto_aim = False
 start_time = None
+
+WINDOW_TITLE = "aimlab_tb"
+global aimlab_tb_hwnd
+aimlab_tb_hwnd = win32gui.FindWindow(None, WINDOW_TITLE)
+if aimlab_tb_hwnd == 0:
+    print("No window found")
+    sys.exit(0)
 
 while True:
     if keyboard.is_pressed('s'):
@@ -25,7 +33,7 @@ while True:
             auto_aim = False
 
         if mode == config.STATIC_MODE:
-            aiming_static.run()
+            aiming_static.run(aimlab_tb_hwnd)
 
         elif mode == config.DYNAMEIC_MODE:
             aiming_dynamic.run()
