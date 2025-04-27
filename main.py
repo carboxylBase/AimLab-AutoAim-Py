@@ -1,15 +1,17 @@
 import cv2
 import aiming_static
-import aiming_dynamic
+# import aiming_dynamic
 import keyboard
 import time
 import config
 import win32gui
 import sys
 
-mode = int(input("Choose mode:\n " \
-"1. static\n " \
-"2. dynamic\n"))
+mode = config.STATIC_MODE
+print("Push 'S' to start.")
+# mode = int(input("Choose mode:\n " \
+# "1. static\n " \
+# "2. dynamic\n"))
 
 auto_aim = False
 start_time = None
@@ -35,5 +37,5 @@ while True:
         if mode == config.STATIC_MODE:
             aiming_static.run(aimlab_tb_hwnd)
 
-        elif mode == config.DYNAMEIC_MODE:
-            aiming_dynamic.run()
+        # elif mode == config.DYNAMEIC_MODE:
+            # aiming_dynamic.run()

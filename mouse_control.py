@@ -27,7 +27,6 @@ def send_input(dx, dy, flags):
 
 def move_mouse_relative(dx, dy):
     driver.move_R(int(dx), int(dy))
-    # send_input(int(dx), int(dy), MOUSEEVENTF_MOVE)
 
 def move_mouse_smooth(dx, dy, steps=1, delay=0):
     for _ in range(steps):
@@ -36,8 +35,6 @@ def move_mouse_smooth(dx, dy, steps=1, delay=0):
 def mouse_click():
     driver.click_Left_down()
     driver.click_Left_up()
-    # send_input(0, 0, MOUSEEVENTF_LEFTDOWN)
-    # send_input(0, 0, MOUSEEVENTF_LEFTUP)
 
 def get_mouse_pos():
     pt = wintypes.POINT()

@@ -4,6 +4,7 @@ import mss
 import cv2
 import numpy as np
 import win32gui
+import time
 
 def run(aimlab_tb_hwnd):
     left, top, right, bottom = win32gui.GetClientRect(aimlab_tb_hwnd)
@@ -18,13 +19,39 @@ def run(aimlab_tb_hwnd):
         mouse_pos = list(mouse_pos)
         mouse_pos[0] = mouse_pos[0] - left_screen
         mouse_pos[1] = mouse_pos[1] - top_screen
-        targets, can_shoot = vision.find_targets(mask, mouse_pos)
-        closest = vision.closest_to_mouse(targets, mouse_pos)
+        targets = vision.find_targets(mask)
 
-        if closest != (-1, -1):
-            dx = closest[0] - mouse_pos[0]
-            dy = closest[1] - mouse_pos[1]
-            if can_shoot > 0:
-                mouse_control.mouse_click()
+        lst_dx,lst_dy = 0,0
+
+        for cx, cy, radius in targets:
+            dx = cx - mouse_pos[0]
+            dy = cy - mouse_pos[1]
+            if dx < 0: 
+                dx -= radius 
             else:
-                mouse_control.move_mouse_smooth(dx, dy)
+                dx += radius 
+
+            if dy < 0: 
+                dy -= radius 
+            else:
+                dy += radius 
+
+            # mouse_control.move_mouse_smooth(dx - lst_dx,dy - lst_dy)
+            # lst_dx,lst_dy = dx,dy
+            # time.sleep(0.01)
+            # mouse_control.mouse_click()
+            # time.sleep(0.01)
+            mouse_control.move_mouse_smooth(dx,dy)
+            time.sleep(0.01)
+            mouse_control.mouse_click()
+            mouse_control.move_mouse_smooth(-dx,-dy)
+            time.sleep(0.01)
+
+
+        # if closest != (-1, -1):
+        #     dx = closest[0] - mouse_pos[0]
+        #     dy = closest[1] - mouse_pos[1]
+        #     if can_shoot > 0:
+        #         mouse_control.mouse_click()
+        #     else:
+        #         mouse_control.move_mouse_smooth(dx, dy)

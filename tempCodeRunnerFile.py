@@ -1,1 +1,2 @@
- 
+
+auto_aim = False
