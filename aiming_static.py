@@ -26,26 +26,30 @@ def run(aimlab_tb_hwnd):
         for cx, cy, radius in targets:
             dx = cx - mouse_pos[0]
             dy = cy - mouse_pos[1]
-            if dx < 0: 
-                dx -= radius 
-            else:
-                dx += radius 
+            # if dx < 0: 
+            #     dx -= radius 
+            # else:
+            #     dx += radius 
 
-            if dy < 0: 
-                dy -= radius 
-            else:
-                dy += radius 
+            # if dy < 0: 
+            #     dy -= radius 
+            # else:
+            #     dy += radius 
 
             # mouse_control.move_mouse_smooth(dx - lst_dx,dy - lst_dy)
             # lst_dx,lst_dy = dx,dy
             # time.sleep(0.01)
             # mouse_control.mouse_click()
             # time.sleep(0.01)
+            dx /= 0.82
+            dy /= 0.80
+            delta = 0.1
             mouse_control.move_mouse_smooth(dx,dy)
-            time.sleep(0.01)
+            time.sleep(delta)
             mouse_control.mouse_click()
+            time.sleep(delta)
             mouse_control.move_mouse_smooth(-dx,-dy)
-            time.sleep(0.01)
+            time.sleep(delta)
 
 
         # if closest != (-1, -1):

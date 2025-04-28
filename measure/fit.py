@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 result = []
-with open('measure/data.csv', 'r') as f:
+with open('measure/data/data_y.csv', 'r') as f:
     for line in f:
         a, b = map(float, line.strip().split(','))
         result.append([a, b])
@@ -11,9 +11,6 @@ x, y = [], []
 for cnt in result:
     x.append(cnt[0])
     y.append(cnt[1])
-
-# print("x数组:", x)
-# print("y数组:", y)
 
 # 拟合一个二次多项式（可以改变拟合阶数）
 mi = 8
